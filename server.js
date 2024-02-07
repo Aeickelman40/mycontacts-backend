@@ -5,7 +5,7 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
-const port = process.env.port || 8000
+const port = process.env.port || 8001
 
 app.use(express.json())
 
