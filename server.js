@@ -1,15 +1,18 @@
 const express = require('express');
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv').config();
 
 const errorHandler = require('./middleware/errorHandler');
+const connectDb = require('./config/dbConnection');
 
+
+connectDb();
 const app = express();
 
-const port = process.env.port || 8001
+const port = process.env.port || 8001;
 
-app.use(express.json())
+app.use(express.json());
 
-app.use('/api/contacts', require('./routes/contactRoutes'))
+app.use('/api/contacts', require('./routes/contactRoutes'));
 
 app.use(errorHandler)
 
